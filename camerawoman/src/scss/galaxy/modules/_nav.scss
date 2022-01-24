@@ -1,0 +1,86 @@
+// MENU HAMBURGER !!
+//-------------------------------
+
+@media screen and (max-width: 991px) {
+    #hamburgerLabel {
+        display: block;
+        position: fixed;
+        top: 1rem; left: 1rem;
+        z-index: 2;
+        font-size: 2.5rem;
+        &::before {
+            content: '\f0d7';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: $color_h1;
+        }
+    }
+
+    #hamburgerCheckbox {
+        display: none;
+        ~ nav {
+            position: fixed;
+            z-index: 1;
+            top: 0; left: 0;
+       
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+            
+
+            &> ul.nav_pages {
+                display: flex;
+                flex-flow: column wrap;                      
+                padding-top: 12rem;
+            }
+
+            &> ul.nav_socialIcons {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding-top: 1.5rem;
+            }
+            transition: all 600ms ease;
+            transform: translate(-100%, -100%);
+        }
+
+        &:checked {
+            ~ nav {
+                transition: all 600ms ease;
+                transform: translateY(0%);
+                height: 100%;
+                min-width: 100%;
+            }
+            
+
+            + #hamburgerLabel {
+                background: none;
+                
+                
+                &::before {
+                    content: '\f00d';
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    color: $color_background_dark2;
+                }
+            }
+        }     
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #hamburgerCheckbox, #hamburgerLabel {
+        display: none;
+    }
+    // FLEX NAV
+    nav {
+        display: flex;
+        justify-content: space-between;
+        &> ul {
+            display: flex;
+            &> li {
+                display: flex;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@use "sass:map";
+
+// GRID SYSTEM 12 colonnes
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1em;
+    &.grid-no-gap {
+        gap: 0 0;
+    }
+    > * {
+        grid-column: span 12;
+        grid-row: span 1;
+    }
+}
+
+@each $size, $values in $screen-sizes {
+    @media screen and (min-width: map-get($values, 'breakpoint')) {
+        .container {
+            width: 100%;
+            max-width: map-get($values, 'container-size');
+            margin: auto;
+        }
+        @for $i from 1 through 12 {
+            .col#{$size}-#{$i} {
+                grid-column: span + ' ' + #{$i};
+            }
+            .row#{$size}-#{$i} {
+                grid-row: span + ' ' + #{$i};
+            }
+            @for $j from 0 through 11 {
+                .offset#{$size}-#{$j}.col#{$size}-#{$i} {
+                    grid-column: #{$j+1} / span + ' ' + #{$i};
+                }
+            }
+        }
+    }  
+}

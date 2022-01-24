@@ -1,0 +1,91 @@
+// VARIABLES 
+
+$color_link: black;
+$color_background_dark1: #000524;
+$color_background_dark2: #00020f;
+$color_background_light: #E6F2FF;
+$color_h1: #CCE6FF;
+$color_h2_h3: #00001A;
+$color_font: #00041A;
+$color_hover: #0974df;
+$color_background_hover: #CCE6FF;
+
+
+// BACKGROUND
+
+body {
+    background: linear-gradient(to bottom right, $color_background_dark1, $color_background_dark2) no-repeat fixed;
+}
+
+main {
+    background: $color_background_light;
+}
+
+// HEADER
+
+.header_text {
+    color: $color_h1;
+}
+
+
+@media screen and (max-width: 991px) {
+    nav {
+        background: $color_background_light;
+        > ul > li {
+            &.isActive {
+                background: $color_background_hover;
+                
+            }
+            > a {
+                color: $color_link;
+                &:hover {
+                    color: $color_hover;
+                }
+            }
+        }
+    }
+
+    
+    .nav_socialIcons > li > a {
+        color: $color_link;
+        &:hover {
+            color: $color_hover;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    nav {
+        background: $color_background_light;
+        > ul > li {
+            &.isActive {
+                background: $color_background_hover;
+            }
+            > a {
+            color: $color_link;
+            &:hover {
+                color: $color_hover;
+            } 
+            }
+        }
+    }
+}
+
+
+// MAIN
+
+li {
+    color: $color_font;
+}
+
+h1 {
+    color: $color_h1;
+}
+
+main > p {
+    color: $color_font;
+}
+
+.link {
+    color: $color_link;
+}

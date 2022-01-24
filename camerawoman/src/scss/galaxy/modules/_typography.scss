@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap');
+
+
+// VARIABLES
+
+$font_h: 'Merriweather', serif;
+$font_text: 'Source Sans 3', sans-serif;
+$deco_link_none: none;
+$font_size_h1: 3rem;
+$font_size_h2: 2rem;
+$font_size_h3: 1.5rem;
+$font_size_text: 1rem;
+$bold: bold;
+$link_dotted: underline dotted;
+$line_height_text: 1.7rem;
+
+
+
+
+// HEADER
+
+    h1 {
+        ~ p {
+            font-family: $font_h;
+        }
+        > a {
+            font-size: $font_size_h1;
+            font-weight: $bold;
+            font-family: $font_h;
+            color: $color_h1;
+        }
+    }
+
+
+
+// MAIN
+
+
+    h2 {
+        font-size: $font_size_h2;
+        font-family: $font_h;
+    }
+
+    .h2_musique {
+        padding-top: 2rem;
+    }
+
+    h3 {
+        font-size: $font_size_h3;
+        font-family: $font_h;
+    }
+
+    p, .li_list, a {
+        font-size: $font_size_text;
+        font-family: $font_text;
+    }
+
+    p, .li_list {
+        line-height: $line_height_text;
+    }
+
+    // LINK
+    a {
+        text-decoration: $deco_link_none;
+    }
+
+    .link {
+        text-decoration: $link_dotted;
+    }

@@ -1,0 +1,55 @@
+@import './galaxy/index.scss';
+
+// BODY
+
+body {
+    height: 100%;
+}
+
+
+// HEADER
+
+.main-header {
+    text-align: center;
+    margin-bottom: .1rem;
+}
+
+.header_text {
+    margin-bottom: 1rem;
+}
+
+nav  > ul {
+        margin: 0;
+        padding: 0;
+
+        > li {
+            padding: 1rem;
+        }
+}
+
+.hidden {
+    display: none;
+}
+
+
+// MAIN
+
+@media screen and (min-width: 768px) {
+    main {
+        padding: 2rem 3rem;
+    } 
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        padding: 1rem 2rem;
+    } 
+}
+
+h3 {
+    padding-top: 1rem;
+}
+
+main > p {
+    padding-bottom: 1rem;
+}
